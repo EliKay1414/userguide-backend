@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guide_pages",
+  "info": {
+    "singularName": "guide-page",
+    "pluralName": "guide-pages",
+    "displayName": "Guide Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Get Started, Member Management, Finance, Operations, Technical, Media"
+      ]
+    },
+    "Order": {
+      "type": "integer"
+    },
+    "PathCards": {
+      "type": "component",
+      "component": "elements.path-card",
+      "repeatable": true
+    }
+  }
+}
