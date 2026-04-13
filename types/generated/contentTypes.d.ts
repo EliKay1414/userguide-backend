@@ -476,17 +476,23 @@ export interface ApiBranchBranch extends Struct.CollectionTypeSchema {
   };
   attributes: {
     branchCode: Schema.Attribute.String;
+    BranchStatus: Schema.Attribute.Enumeration<
+      ['Ready', 'Maintenance', 'Syncing']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::branch.branch'
     > &
       Schema.Attribute.Private;
+    location: Schema.Attribute.String;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    tier: Schema.Attribute.Enumeration<['National', 'Regional', 'District']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -570,6 +576,7 @@ export interface ApiGuidePageGuidePage extends Struct.CollectionTypeSchema {
       'api::guide-page.guide-page'
     > &
       Schema.Attribute.Private;
+    MainSections: Schema.Attribute.DynamicZone<['specs.registry-column']>;
     Order: Schema.Attribute.Integer;
     PathCards: Schema.Attribute.Component<'elements.path-card', true>;
     publishedAt: Schema.Attribute.DateTime;

@@ -34,6 +34,12 @@
       "type": "component",
       "component": "elements.path-card",
       "repeatable": true
+    },
+    "MainSections": {
+      "type": "dynamiczone",
+      "components": [
+        "specs.registry-column"
+      ]
     }
   }
 }

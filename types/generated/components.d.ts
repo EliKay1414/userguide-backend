@@ -36,12 +36,37 @@ export interface NavigationMenuLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SpecsRegistryColumn extends Struct.ComponentSchema {
+  collectionName: 'components_specs_registry_columns';
+  info: {
+    displayName: 'Registry Column';
+  };
+  attributes: {
+    icon_name: Schema.Attribute.String;
+    specs: Schema.Attribute.Component<'specs.spec-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SpecsSpecItem extends Struct.ComponentSchema {
+  collectionName: 'components_specs_spec_items';
+  info: {
+    displayName: 'Spec Item';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'elements.path-card': ElementsPathCard;
       'navigation.menu-group': NavigationMenuGroup;
       'navigation.menu-link': NavigationMenuLink;
+      'specs.registry-column': SpecsRegistryColumn;
+      'specs.spec-item': SpecsSpecItem;
     }
   }
 }

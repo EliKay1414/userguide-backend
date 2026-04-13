@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_specs_registry_columns",
+  "info": {
+    "displayName": "Registry Column"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon_name": {
+      "type": "string"
+    },
+    "specs": {
+      "type": "component",
+      "component": "specs.spec-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

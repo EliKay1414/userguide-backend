@@ -16,6 +16,28 @@
     },
     "branchCode": {
       "type": "string"
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "National",
+        "Regional",
+        "District"
+      ]
+    },
+    "currency": {
+      "type": "string"
+    },
+    "BranchStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Ready",
+        "Maintenance",
+        "Syncing"
+      ]
+    },
+    "location": {
+      "type": "string"
     }
   }
 }
