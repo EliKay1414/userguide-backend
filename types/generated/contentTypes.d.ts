@@ -580,7 +580,7 @@ export interface ApiGuidePageGuidePage extends Struct.CollectionTypeSchema {
     Order: Schema.Attribute.Integer;
     PathCards: Schema.Attribute.Component<'elements.path-card', true>;
     publishedAt: Schema.Attribute.DateTime;
-    Slug: Schema.Attribute.UID<'Title'>;
+    slug: Schema.Attribute.UID<'Title'>;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
