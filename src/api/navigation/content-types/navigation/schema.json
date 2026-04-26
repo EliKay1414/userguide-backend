@@ -13,7 +13,11 @@
   "attributes": {
     "Groups": {
       "type": "component",
+<<<<<<< HEAD
       "component": "nav.nav-group",
+=======
+      "component": "navigation.menu-group",
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
       "repeatable": true
     }
   }

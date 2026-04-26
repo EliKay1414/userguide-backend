@@ -1,4 +1,5 @@
 import path from 'path';
+<<<<<<< HEAD
 import { fileURLToPath } from 'url';
 import type { Core } from '@strapi/strapi';
 
@@ -14,6 +15,14 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database 
   const client = env('DATABASE_CLIENT', 'sqlite') as 'sqlite' | 'mysql' | 'postgres';
 
   const connections: Record<string, any> = {
+=======
+import type { Core } from '@strapi/strapi';
+
+const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database => {
+  const client = env('DATABASE_CLIENT', 'sqlite');
+
+  const connections = {
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     mysql: {
       connection: {
         host: env('DATABASE_HOST', 'localhost'),

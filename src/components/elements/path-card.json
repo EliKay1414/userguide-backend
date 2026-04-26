@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_path_cards",
+  "info": {
+    "displayName": "path-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "icon_name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

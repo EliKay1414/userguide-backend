@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "moduleResolution": "Bundler",
     "ignoreDeprecations": "5.0",
+=======
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     "lib": ["ES2020"],
     "target": "ES2019",
     "strict": false,

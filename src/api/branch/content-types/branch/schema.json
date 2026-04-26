@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "branches",
+  "info": {
+    "singularName": "branch",
+    "pluralName": "branches",
+    "displayName": "Branch"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "branchCode": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "National",
+        "Regional",
+        "District"
+      ]
+    },
+    "currency": {
+      "type": "string"
+    },
+    "BranchStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Ready",
+        "Maintenance",
+        "Syncing"
+      ]
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}

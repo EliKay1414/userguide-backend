@@ -14,12 +14,39 @@
     "Title": {
       "type": "string"
     },
+<<<<<<< HEAD
     "Slug": {
+=======
+    "slug": {
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
       "type": "uid",
       "targetField": "Title"
     },
     "Content": {
       "type": "blocks"
+<<<<<<< HEAD
+=======
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Get Started, Member Management, Finance, Operations, Technical, Media"
+      ]
+    },
+    "Order": {
+      "type": "integer"
+    },
+    "PathCards": {
+      "type": "component",
+      "component": "elements.path-card",
+      "repeatable": true
+    },
+    "MainSections": {
+      "type": "dynamiczone",
+      "components": [
+        "specs.registry-column"
+      ]
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     }
   }
 }

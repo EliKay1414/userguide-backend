@@ -107,6 +107,7 @@ export interface AdminApiTokenPermission extends Struct.CollectionTypeSchema {
   };
 }
 
+<<<<<<< HEAD
 export interface AdminAuditLog extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_audit_logs';
   info: {
@@ -144,6 +145,8 @@ export interface AdminAuditLog extends Struct.CollectionTypeSchema {
   };
 }
 
+=======
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -467,30 +470,144 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+<<<<<<< HEAD
 export interface ApiBranchSetupBranchSetup extends Struct.CollectionTypeSchema {
   collectionName: 'branch_setups';
   info: {
     displayName: 'Branch Setup';
     pluralName: 'branch-setups';
     singularName: 'branch-setup';
+=======
+export interface ApiAttendanceRecordAttendanceRecord
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'attendance_records';
+  info: {
+    displayName: 'Attendance-Record';
+    pluralName: 'attendance-records';
+    singularName: 'attendance-record';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    AttendanceStatus: Schema.Attribute.Enumeration<
+      ['Present', 'Absent', 'Late']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attendance-record.attendance-record'
+    > &
+      Schema.Attribute.Private;
+    member: Schema.Attribute.Relation<'oneToOne', 'api::member.member'>;
+    notes: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBranchBranch extends Struct.CollectionTypeSchema {
+  collectionName: 'branches';
+  info: {
+    displayName: 'Branch';
+    pluralName: 'branches';
+    singularName: 'branch';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    branchCode: Schema.Attribute.String;
+    BranchStatus: Schema.Attribute.Enumeration<
+      ['Ready', 'Maintenance', 'Syncing']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::branch.branch'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    tier: Schema.Attribute.Enumeration<['National', 'Regional', 'District']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiComponentComponent extends Struct.SingleTypeSchema {
+  collectionName: 'components';
+  info: {
+    displayName: 'Component';
+    pluralName: 'components';
+    singularName: 'component';
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+<<<<<<< HEAD
     Content: Schema.Attribute.Blocks;
+=======
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
+<<<<<<< HEAD
       'api::branch-setup.branch-setup'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'>;
     Title: Schema.Attribute.String;
+=======
+      'api::component.component'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Struct.CollectionTypeSchema {
+  collectionName: 'events';
+  info: {
+    displayName: 'Event';
+    pluralName: 'events';
+    singularName: 'event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Date: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -508,6 +625,12 @@ export interface ApiGuidePageGuidePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+<<<<<<< HEAD
+=======
+    Category: Schema.Attribute.Enumeration<
+      ['Get Started, Member Management, Finance, Operations, Technical, Media']
+    >;
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -518,8 +641,16 @@ export interface ApiGuidePageGuidePage extends Struct.CollectionTypeSchema {
       'api::guide-page.guide-page'
     > &
       Schema.Attribute.Private;
+<<<<<<< HEAD
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'>;
+=======
+    MainSections: Schema.Attribute.DynamicZone<['specs.registry-column']>;
+    Order: Schema.Attribute.Integer;
+    PathCards: Schema.Attribute.Component<'elements.path-card', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Title'>;
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -527,6 +658,48 @@ export interface ApiGuidePageGuidePage extends Struct.CollectionTypeSchema {
   };
 }
 
+<<<<<<< HEAD
+=======
+export interface ApiMemberMember extends Struct.CollectionTypeSchema {
+  collectionName: 'members';
+  info: {
+    displayName: 'Member';
+    pluralName: 'members';
+    singularName: 'member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    branch: Schema.Attribute.Relation<'oneToOne', 'api::branch.branch'>;
+    branches: Schema.Attribute.Relation<'oneToOne', 'api::branch.branch'>;
+    Category: Schema.Attribute.Enumeration<
+      ['Regular', 'Visitor', 'New Convert']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.Email;
+    FullName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::member.member'
+    > &
+      Schema.Attribute.Private;
+    memberID: Schema.Attribute.String;
+    MemberStatus: Schema.Attribute.Enumeration<
+      ['Active', 'Inactive', 'Archived']
+    >;
+    PhoneNumber: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
 export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   collectionName: 'navigations';
   info: {
@@ -541,7 +714,11 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+<<<<<<< HEAD
     Groups: Schema.Attribute.Component<'nav.nav-group', true>;
+=======
+    Groups: Schema.Attribute.Component<'navigation.menu-group', true>;
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -555,6 +732,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   };
 }
 
+<<<<<<< HEAD
 export interface ApiQuickstartQuickstart extends Struct.CollectionTypeSchema {
   collectionName: 'quickstarts';
   info: {
@@ -646,6 +824,8 @@ export interface ApiTechStackTechStack extends Struct.CollectionTypeSchema {
   };
 }
 
+=======
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1151,19 +1331,32 @@ declare module '@strapi/strapi' {
     export interface ContentTypeSchemas {
       'admin::api-token': AdminApiToken;
       'admin::api-token-permission': AdminApiTokenPermission;
+<<<<<<< HEAD
       'admin::audit-log': AdminAuditLog;
+=======
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
       'admin::permission': AdminPermission;
       'admin::role': AdminRole;
       'admin::session': AdminSession;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+<<<<<<< HEAD
       'api::branch-setup.branch-setup': ApiBranchSetupBranchSetup;
       'api::guide-page.guide-page': ApiGuidePageGuidePage;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::quickstart.quickstart': ApiQuickstartQuickstart;
       'api::staff-onboarding.staff-onboarding': ApiStaffOnboardingStaffOnboarding;
       'api::tech-stack.tech-stack': ApiTechStackTechStack;
+=======
+      'api::attendance-record.attendance-record': ApiAttendanceRecordAttendanceRecord;
+      'api::branch.branch': ApiBranchBranch;
+      'api::component.component': ApiComponentComponent;
+      'api::event.event': ApiEventEvent;
+      'api::guide-page.guide-page': ApiGuidePageGuidePage;
+      'api::member.member': ApiMemberMember;
+      'api::navigation.navigation': ApiNavigationNavigation;
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

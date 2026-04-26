@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendance_records",
+  "info": {
+    "singularName": "attendance-record",
+    "pluralName": "attendance-records",
+    "displayName": "Attendance-Record"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AttendanceStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Present",
+        "Absent",
+        "Late"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::member.member"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    }
+  }
+}

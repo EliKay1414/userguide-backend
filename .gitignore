@@ -125,6 +125,7 @@ coverage
 license.txt
 exports
 .strapi
+<<<<<<< HEAD
 dist/
 build/
 .strapi-updater.json
@@ -132,3 +133,17 @@ build/
 node_modules/
 .tmp/
 .cache/
+=======
+dist
+build
+.strapi-updater.json
+.strapi-cloud.json
+
+node_modules/
+.tmp/
+.cache/
+build/
+.env
+public/uploads/
+.data/
+>>>>>>> ac1b6f53d0afadfd17d0800b468bb9d0330c4482

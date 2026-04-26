@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navigation_menu_groups",
+  "info": {
+    "displayName": "Menu Group"
+  },
+  "options": {},
+  "attributes": {
+    "GroupTitle": {
+      "type": "string"
+    },
+    "Links": {
+      "type": "component",
+      "component": "navigation.menu-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
