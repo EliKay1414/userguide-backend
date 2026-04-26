@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staff_onboardings",
+  "info": {
+    "singularName": "staff-onboarding",
+    "pluralName": "staff-onboardings",
+    "displayName": "Staff Onboarding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

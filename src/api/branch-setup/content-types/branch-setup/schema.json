@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "branch_setups",
+  "info": {
+    "singularName": "branch-setup",
+    "pluralName": "branch-setups",
+    "displayName": "Branch Setup"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}
